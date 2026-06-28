@@ -1,9 +1,10 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.py"
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/app.py" }
+  ],
+  "functions": {
+    "app.py": {
+      "runtime": "vercel-python@python3.9"
     }
-  ]
+  }
 }
