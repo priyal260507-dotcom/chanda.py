@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #111424 0%, #050508 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Stars layer */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 20px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.app-layout {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 420px;
+    height: 92vh; /* Keeps everything grouped securely inside the visible area */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.tribute {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #a0aab0;
+}
+
+.interactive-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 3D Crater Textured Moon Button */
+.moon-button {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.4) 0%, transparent 70%),
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 10px),
+        #e3e7e9;
+    box-shadow: 
+        0 0 40px rgba(235, 243, 247, 0.4), 
+        0 0 80px rgba(235, 243, 247, 0.2),
+        inset -20px -20px 30px rgba(0, 0, 0, 0.35),
+        inset 8px 8px 15px rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moon-button:hover {
+    box-shadow: 0 0 55px rgba(235, 243, 247, 0.55), inset -15px -15px 25px rgba(0, 0, 0, 0.35);
+}
+
+.button-text {
+    color: #1c2529;
+    font-weight: 600;
+    font-size: 1rem;
+    opacity: 0.75;
+}
+
+.status-box p {
+    font-size: 1.05rem;
+    color: #cfd8dc;
+    font-weight: 300;
+}
+
+.response-container {
+    width: 100%;
+}
+
+.conversation-bubble {
+    width: 100%;
+    min-height: 80px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 14px;
+    padding: 15px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    line-height: 1.4;
+}

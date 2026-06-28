@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chanda Voice Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="app-layout">
+        <header class="main-header">
+            <h1>Chanda</h1>
+            <p class="tribute">In loving memory of Nani</p>
+        </header>
+
+        <main class="interactive-zone">
+            <div class="moon-container">
+                <button id="micBtn" class="moon-button">
+                    <span class="button-text">Hold Moon</span>
+                </button>
+            </div>
+            
+            <div class="status-box">
+                <p id="status">Status: Idle</p>
+            </div>
+        </main>
+        
+        <footer class="response-container">
+            <div id="response-box" class="conversation-bubble">
+                Click the moon to start...
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
