@@ -17,7 +17,7 @@ def ask_gemini(user_query):
         prompt = f"You are Chanda (kind AI assistant as you are named chanda as my nani), a sweet and very short-answering voice assistant. Answer this in under 2 sentences: {user_query}"
         
         response = client.models.generate_content(
-            model='gemini-2.5-flash', 
+            model='gemini-1.5-flash', 
             contents=prompt,
         )
         return response.text
