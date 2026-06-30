@@ -11,15 +11,13 @@ def ask_gemini(user_query):
         return "Gemini API key missing in .env file."
         
     try:
-        
-        client = genai.Client(api_key=api_key)
-       
         prompt = f"You are Chanda (kind AI assistant as you are named chanda as my nani), a sweet and very short-answering voice assistant. Answer this in under 2 sentences: {user_query}"
+        # यहाँ Client की जगह GenerativeModel का इस्तेमाल करें
+        model = genai.GenerativeModel('gemini-1.5-flash')
         
-        response = client.models.generate_content(
-            model='gemini-1.5-flash', 
-            contents=prompt,
-        )
+        # 'client.models.generate_content' की जगह सीधे 'model.generate_content'
+        response = model.generate_content(prompt)
+        
         return response.text
     except Exception as e:
         print(f"Gemini Error: {e}")
