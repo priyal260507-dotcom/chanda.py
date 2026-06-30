@@ -11,11 +11,15 @@ def ask_gemini(user_query):
         return "Gemini API key missing in .env file."
         
     try:
+        user_input = user_query.strip().lower()
+        wake_words = ["chanda", "listen", "hear" ,"help", "can you"]
+        if any(word in user_input for word in wake_words):
+            return "Yes, how can I help you?"
         prompt = f"You are Chanda (kind AI assistant as you are named chanda as my nani), a sweet and very short-answering voice assistant. Answer this in under 2 sentences: {user_query}"
-        # यहाँ Client की जगह GenerativeModel का इस्तेमाल करें
-        model = genai.GenerativeModel('gemini-1.5-flash')
         
-        # 'client.models.generate_content' की जगह सीधे 'model.generate_content'
+        model = genai.GenerativeModel('gemini-2.5-flash')
+        
+       
         response = model.generate_content(prompt)
         
         return response.text

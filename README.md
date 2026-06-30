@@ -20,7 +20,7 @@ This project has been developed in two distinct phases to show the progression f
 * **Live News Fetching:** Uses RSS feeds (`feedparser`) to fetch and read out the latest top news headlines.
 * **Music Library Access:** Plays predefined songs from a custom music library logic.
 * **Utility Tools:** Accurately fetches and reports the current system time and date.
-
+* **Smart Wake-Word Activation:** The AI is now more interactive; simply saying "Chanda" (or conversational phrases like "Chanda,can you listen to me?") triggers an immediate confirmation: "Yes,how can I help you?"
 ## 🛠️ Technology Stack
 * **Backend:** Python 3, Flask (Web Framework), google-generativeai
 * **Frontend:** HTML5, CSS3, Vanilla JavaScript (DOM manipulation & Web Speech API)
