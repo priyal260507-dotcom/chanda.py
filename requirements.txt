@@ -4,3 +4,4 @@ feedparser
 python-dotenv
 requests
 gunicorn
+pytz

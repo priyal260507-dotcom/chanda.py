@@ -4,7 +4,7 @@ import os
 import feedparser
 import datetime
 import time
-
+import pytz
 
 
 
@@ -66,7 +66,8 @@ def process_command_text(c):
         else:
             return ask_gemini(c)
     elif "time" in c_lower:
-        now = datetime.datetime.now()
+        ist = pytz.timezone('Asia/Kolkata')
+        now = datetime.datetime.now(ist)
         current_time = now.strftime("%I:%M %p")
         reply = f"The current time is {current_time}"
         return reply
